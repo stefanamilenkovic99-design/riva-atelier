@@ -241,7 +241,7 @@
   }
 
   /* ---------- Zaglavlje sekcije ---------- */
-  .section { padding-top: 92px; padding-bottom: 92px; }
+  .section { padding-top: 120px; padding-bottom: 120px; }
 
   .sec-head {
     display: flex;
@@ -259,6 +259,7 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
   }
+  .sec-head-end { justify-content: flex-end; }
   .more {
     display: inline-flex;
     align-items: center;
@@ -330,7 +331,7 @@
     margin-bottom: 18px;
   }
   .ed-copy p:last-of-type { margin-bottom: 0; }
-  .ed-copy .more { margin-top: 30px; padding-bottom: 0; }
+  .ed-copy { align-self: center; }
 
   /* ---------- Studio 13 ---------- */
   .duo {
@@ -680,6 +681,13 @@
   <!-- ============ NOVE KOLEKCIJE ============ -->
   <section class="section" id="nove" style="padding-top:0;">
     <div class="wrap">
+      <div class="sec-head sec-head-end">
+        <a href="#kontakt" class="more micro">
+          Vidi više
+          <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
+        </a>
+      </div>
+
       <div class="editorial">
         <figure>
           <img src="assets/outfit-crni.jpg" alt="Devojka u crnom svečanom kompletu sa rukavicama, sedi u enterijeru salona">
@@ -695,10 +703,6 @@
         <div class="ed-copy">
           <p>Kolekcija se dopunjuje kroz sezonu. Biramo modele koji se ne ponavljaju po proslavama — kratke satenske i tila haljine, korsete i duge modele u nekoliko boja.</p>
           <p>Svaka haljina je jedan komad. Kad je rezervisana za tvoj datum, tog dana ne ide ni kod koga drugog. Zato je najbolje da se javiš čim znaš termin.</p>
-          <a href="#kontakt" class="more micro">
-            Vidi više
-            <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
-          </a>
         </div>
       </div>
     </div>
