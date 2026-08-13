@@ -131,12 +131,33 @@
 
   .drawer {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
-    border-top: 1px solid var(--line);
-    padding-top: 10px;
-    padding-bottom: 22px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 6px;
+    padding-bottom: 18px;
   }
-  .drawer.open { display: flex; }
+  .drawer.open {
+    display: flex;
+    animation: drawer-in 0.3s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+  .drawer.open.closing {
+    animation: drawer-out 0.24s ease both;
+  }
+  @keyframes drawer-in {
+    from { opacity: 0; transform: translateY(-14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes drawer-out {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-14px); }
+  }
   .drawer a {
     padding-top: 13px;
     padding-bottom: 13px;
@@ -293,8 +314,7 @@
     object-fit: cover;
     background: var(--sand);
   }
-  .ed-offset { margin-top: 96px; }
-  .ed-copy h2 {
+  .ed-mid h2 {
     font-family: var(--serif);
     font-weight: 500;
     font-size: clamp(30px, 3.6vw, 50px);
@@ -303,13 +323,14 @@
     text-transform: uppercase;
     margin-bottom: 26px;
   }
-  .ed-copy .more { margin-bottom: 30px; padding-bottom: 0; }
   .ed-copy p {
     color: var(--muted);
     font-size: 14px;
     line-height: 1.95;
     margin-bottom: 18px;
   }
+  .ed-copy p:last-of-type { margin-bottom: 0; }
+  .ed-copy .more { margin-top: 30px; padding-bottom: 0; }
 
   /* ---------- Studio 13 ---------- */
   .duo {
@@ -334,6 +355,15 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+  .duo-copy h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(27px, 4.2vw, 52px);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
   .duo-copy p {
     color: var(--muted);
     font-size: 14px;
@@ -341,7 +371,8 @@
     margin-bottom: 18px;
     max-width: 62ch;
   }
-  .duo-copy p:last-child { margin-bottom: 0; }
+  .duo-copy p:last-of-type { margin-bottom: 0; }
+  .duo-copy .more { margin-top: 30px; padding-bottom: 0; }
 
   /* ---------- Prilike ---------- */
   .occ-band { background: var(--sand); }
@@ -491,9 +522,8 @@
     .wrap { padding-left: 28px; padding-right: 28px; }
     .grid4 { grid-template-columns: repeat(2, 1fr); gap: 20px 18px; }
     .editorial { grid-template-columns: 1fr 1fr; gap: 30px; }
-    .ed-copy { grid-column: 1 / -1; order: -1; margin-bottom: 6px; }
+    .ed-copy { grid-column: 1 / -1; }
     .ed-copy p { max-width: 62ch; }
-    .ed-offset { margin-top: 0; }
     .duo { grid-template-columns: 1fr; gap: 30px; }
     .occ-grid { grid-template-columns: repeat(2, 1fr); }
     .occ:nth-child(2n) { border-right: none; padding-right: 0; }
@@ -519,6 +549,7 @@
   @media (max-width: 620px) {
     .wrap { padding-left: 20px; padding-right: 20px; }
     .wordmark { font-size: 19px; letter-spacing: 3.5px; }
+    .drawer { padding-left: 20px; padding-right: 20px; }
     .grid4 { grid-template-columns: 1fr; gap: 34px; }
     .editorial { grid-template-columns: 1fr; }
     .occ-grid { grid-template-columns: 1fr; }
@@ -654,18 +685,20 @@
           <img src="assets/outfit-crni.jpg" alt="Devojka u crnom svečanom kompletu sa rukavicama, sedi u enterijeru salona">
         </figure>
 
-        <figure class="ed-offset">
-          <img src="assets/haljina-braon.jpg" alt="Duga braon haljina sa nabranim strukom, ukrštenim bretelama oko vrata i izrezom na grudima">
-        </figure>
+        <div class="ed-mid">
+          <h2>Nove<br>kolekcije</h2>
+          <figure>
+            <img src="assets/haljina-braon.jpg" alt="Duga braon haljina sa nabranim strukom, ukrštenim bretelama oko vrata i izrezom na grudima">
+          </figure>
+        </div>
 
         <div class="ed-copy">
-          <h2>Nove<br>kolekcije</h2>
+          <p>Kolekcija se dopunjuje kroz sezonu. Biramo modele koji se ne ponavljaju po proslavama — kratke satenske i tila haljine, korsete i duge modele u nekoliko boja.</p>
+          <p>Svaka haljina je jedan komad. Kad je rezervisana za tvoj datum, tog dana ne ide ni kod koga drugog. Zato je najbolje da se javiš čim znaš termin.</p>
           <a href="#kontakt" class="more micro">
             Vidi više
             <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
           </a>
-          <p>Kolekcija se dopunjuje kroz sezonu. Biramo modele koji se ne ponavljaju po proslavama — kratke satenske i tila haljine, korsete i duge modele u nekoliko boja.</p>
-          <p>Svaka haljina je jedan komad. Kad je rezervisana za tvoj datum, tog dana ne ide ni kod koga drugog. Zato je najbolje da se javiš čim znaš termin.</p>
         </div>
       </div>
     </div>
@@ -674,22 +707,19 @@
   <!-- ============ STUDIO 13 ============ -->
   <section class="section" id="frizura" style="padding-top:0;">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>Haljina i frizura zajedno</h2>
-        <a href="#kontakt" class="more micro">
-          Zakaži probu
-          <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
-        </a>
-      </div>
-
       <div class="duo">
         <figure>
           <div class="ph">Fotografija frizure iz Studija 13</div>
         </figure>
 
         <div class="duo-copy">
+          <h2>Haljina i frizura zajedno</h2>
           <p>Sarađujemo sa Studiom 13. Kad kod nas izabereš haljinu, oni preuzimaju frizuru, pa ne juriš dva termina na dva kraja grada.</p>
           <p>Ako ne znaš kako da se očešljaš uz model koji si uzela, pokažemo ti primere frizura koje idu uz njega. Mi javimo Studiju 13 tvoj datum, oni ti drže termin, a ti izlaziš sa haljinom i frizurom koje se slažu.</p>
+          <a href="#kontakt" class="more micro">
+            Zakaži probu
+            <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -831,17 +861,35 @@
     var burger = document.getElementById('burger');
     var drawer = document.getElementById('drawer');
 
+    var closeTimer = null;
+
+    function openDrawer() {
+      clearTimeout(closeTimer);
+      drawer.classList.remove('closing');
+      drawer.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDrawer() {
+      if (!drawer.classList.contains('open')) return;
+      drawer.classList.add('closing');
+      burger.setAttribute('aria-expanded', 'false');
+      closeTimer = setTimeout(function () {
+        drawer.classList.remove('open', 'closing');
+      }, 240);
+    }
+
     burger.addEventListener('click', function () {
-      var open = drawer.classList.toggle('open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (drawer.classList.contains('open') && !drawer.classList.contains('closing')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
 
     var links = drawer.querySelectorAll('a');
     for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener('click', function () {
-        drawer.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
+      links[i].addEventListener('click', closeDrawer);
     }
   })();
 </script>
