@@ -311,6 +311,38 @@
     margin-bottom: 18px;
   }
 
+  /* ---------- Studio 13 ---------- */
+  .duo {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 46px;
+    align-items: center;
+  }
+  .duo figure { background: var(--sand); overflow: hidden; }
+  .duo .ph {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #D6D2CD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6E6862;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .duo-copy p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.95;
+    margin-bottom: 18px;
+    max-width: 62ch;
+  }
+  .duo-copy p:last-child { margin-bottom: 0; }
+
   /* ---------- Prilike ---------- */
   .occ-band { background: var(--sand); }
   .occ-grid {
@@ -371,9 +403,11 @@
   .step p { color: var(--muted); font-size: 14px; line-height: 1.9; }
 
   /* ---------- Kontakt ---------- */
-  .contact-band {
+  .contact-card {
     background: var(--wine);
     color: #F1E6E9;
+    border-radius: 28px;
+    padding: 56px;
   }
   .contact-grid {
     display: grid;
@@ -460,10 +494,12 @@
     .ed-copy { grid-column: 1 / -1; order: -1; margin-bottom: 6px; }
     .ed-copy p { max-width: 62ch; }
     .ed-offset { margin-top: 0; }
+    .duo { grid-template-columns: 1fr; gap: 30px; }
     .occ-grid { grid-template-columns: repeat(2, 1fr); }
     .occ:nth-child(2n) { border-right: none; padding-right: 0; }
     .occ:nth-child(2n+1) { padding-left: 0; }
     .occ:nth-child(2n) { padding-left: 30px; }
+    .contact-card { padding: 44px; }
     .contact-grid { grid-template-columns: 1fr; gap: 44px; }
   }
 
@@ -492,6 +528,7 @@
     .sec-head .more { padding-bottom: 0; }
     .hero-foot { flex-direction: column; align-items: flex-end; gap: 4px; }
     .hero-foot .season-meta { text-align: right; padding-bottom: 0; }
+    .contact-card { padding: 32px 24px; border-radius: 22px; }
     .c-row .val { font-size: 26px; }
     .foot-grid { grid-template-columns: 1fr; }
   }
@@ -634,6 +671,30 @@
     </div>
   </section>
 
+  <!-- ============ STUDIO 13 ============ -->
+  <section class="section" id="frizura" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Haljina i frizura zajedno</h2>
+        <a href="#kontakt" class="more micro">
+          Zakaži probu
+          <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
+        </a>
+      </div>
+
+      <div class="duo">
+        <figure>
+          <div class="ph">Fotografija frizure iz Studija 13</div>
+        </figure>
+
+        <div class="duo-copy">
+          <p>Sarađujemo sa Studiom 13. Kad kod nas izabereš haljinu, oni preuzimaju frizuru, pa ne juriš dva termina na dva kraja grada.</p>
+          <p>Ako ne znaš kako da se očešljaš uz model koji si uzela, pokažemo ti primere frizura koje idu uz njega. Mi javimo Studiju 13 tvoj datum, oni ti drže termin, a ti izlaziš sa haljinom i frizurom koje se slažu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ PRILIKE ============ -->
   <section class="section occ-band" id="prilike">
     <div class="wrap">
@@ -702,30 +763,32 @@
   </section>
 
   <!-- ============ KONTAKT ============ -->
-  <section class="section contact-band" id="kontakt">
+  <section class="section" id="kontakt">
     <div class="wrap">
-      <div class="contact-grid">
-        <div>
-          <h2>Dođi<br>da probaš</h2>
-          <p class="lead">Najlakše je da nas pozoveš pa da ti nađemo termin. Ako ti se model već dopao iz kolekcije, reci koji — proverimo da li je slobodan za tvoj datum.</p>
-          <div class="c-actions">
-            <a href="tel:0632233666" class="btn-solid">Pozovi 063 22 33 666</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn-ghost">Piši nam na Instagramu</a>
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div>
+            <h2>Dođi<br>da probaš</h2>
+            <p class="lead">Najlakše je da nas pozoveš pa da ti nađemo termin. Ako ti se model već dopao iz kolekcije, reci koji — proverimo da li je slobodan za tvoj datum.</p>
+            <div class="c-actions">
+              <a href="tel:0632233666" class="btn-solid">Pozovi 063 22 33 666</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn-ghost">Piši nam na Instagramu</a>
+            </div>
           </div>
-        </div>
 
-        <div class="c-rows">
-          <div class="c-row">
-            <div class="lbl micro">Telefon</div>
-            <a href="tel:0632233666" class="val">063 22 33 666</a>
-          </div>
-          <div class="c-row">
-            <div class="lbl micro">Adresa</div>
-            <div class="val">Cara Dušana 2</div>
-          </div>
-          <div class="c-row">
-            <div class="lbl micro">Proba</div>
-            <div class="val">Isključivo po dogovoru</div>
+          <div class="c-rows">
+            <div class="c-row">
+              <div class="lbl micro">Telefon</div>
+              <a href="tel:0632233666" class="val">063 22 33 666</a>
+            </div>
+            <div class="c-row">
+              <div class="lbl micro">Adresa</div>
+              <div class="val">Cara Dušana 2</div>
+            </div>
+            <div class="c-row">
+              <div class="lbl micro">Proba</div>
+              <div class="val">Isključivo po dogovoru</div>
+            </div>
           </div>
         </div>
       </div>
