@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riva Atelier — iznajmljivanje svečanih haljina</title>
-<meta name="description" content="Riva Atelier — salon za iznajmljivanje svečanih haljina. Matura, venčanja, punoletstvo i proslave. Cara Dušana 2, 063 22 33 666.">
+<title>Riva Atelier - iznajmljivanje svečanih haljina</title>
+<meta name="description" content="Riva Atelier, salon za iznajmljivanje svečanih haljina. Matura, venčanja, punoletstvo i proslave. Cara Dušana 2, 063 22 33 666.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -40,13 +40,12 @@
 
   .wrap {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1280px;
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
   }
 
-  /* ---------- Sitna verzalna tipografija (labele, nav, meta) ---------- */
   .micro {
     font-family: var(--sans);
     font-weight: 400;
@@ -55,16 +54,7 @@
     text-transform: uppercase;
   }
 
-  /* ---------- Display serif ---------- */
-  .display {
-    font-family: var(--serif);
-    font-weight: 300;
-    line-height: 0.98;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  /* ---------- Traka sa najavom ---------- */
+  /* ---------- Traka iznad navigacije ---------- */
   .topbar {
     background: var(--wine-deep);
     color: #E8DCDF;
@@ -157,38 +147,44 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 65% 28%;
+    object-position: 58% 26%;
   }
   .hero .scrim {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(100deg, rgba(20,10,12,0.62) 0%, rgba(20,10,12,0.30) 42%, rgba(20,10,12,0.10) 68%),
-      linear-gradient(0deg, rgba(20,10,12,0.48) 0%, rgba(20,10,12,0) 40%);
+      linear-gradient(100deg, rgba(20,10,12,0.78) 0%, rgba(20,10,12,0.55) 40%, rgba(20,10,12,0.18) 72%),
+      linear-gradient(0deg, rgba(20,10,12,0.36) 0%, rgba(20,10,12,0) 38%);
   }
   .hero-inner {
     position: absolute;
     inset: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 74px;
-    padding-bottom: 54px;
+    align-items: center;
   }
   .hero-inner > .wrap { width: 100%; }
 
   .hero h1 {
     font-family: var(--serif);
     font-weight: 300;
-    font-size: clamp(46px, 7.4vw, 108px);
-    line-height: 0.94;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    font-size: clamp(40px, 5.6vw, 82px);
+    line-height: 1.06;
+    letter-spacing: 0.01em;
     color: #fff;
+    max-width: 13ch;
+    text-shadow: 0 2px 18px rgba(20,10,12,0.45);
+  }
+  .hero-sub {
+    margin-top: 22px;
+    color: rgba(255,255,255,0.94);
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 40ch;
+    text-shadow: 0 2px 14px rgba(20,10,12,0.55);
   }
   .hero .ghost {
     display: inline-block;
-    margin-top: 34px;
+    margin-top: 32px;
     border: 1px solid rgba(255,255,255,0.75);
     color: #fff;
     padding: 13px 42px;
@@ -200,43 +196,30 @@
   }
   .hero .ghost:hover { background: #fff; color: var(--ink); }
 
-  .hero-foot {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 22px;
-    color: #fff;
-  }
-  .hero-foot .season {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(38px, 5vw, 68px);
-    line-height: 1;
-  }
-  .hero-foot .season-meta {
-    padding-bottom: 10px;
-    letter-spacing: 2px;
-    line-height: 1.9;
-  }
-
   /* ---------- Zaglavlje sekcije ---------- */
-  .section { padding-top: 92px; padding-bottom: 92px; }
+  .section { padding-top: 96px; padding-bottom: 96px; }
 
   .sec-head {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 16px 30px;
-    margin-bottom: 40px;
+    gap: 16px 40px;
+    margin-bottom: 44px;
   }
   .sec-head h2 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(27px, 4.2vw, 52px);
-    line-height: 1;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+    font-size: clamp(27px, 4.2vw, 48px);
+    line-height: 1.04;
+    letter-spacing: 0.02em;
+  }
+  .sec-head p {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 62ch;
   }
   .more {
     display: inline-flex;
@@ -268,81 +251,15 @@
     transition: transform 0.7s cubic-bezier(0.2,0.7,0.3,1);
   }
   .item:hover figure img { transform: scale(1.04); }
-  .item .name {
-    margin-top: 14px;
-    letter-spacing: 1.4px;
-    line-height: 1.55;
-    color: var(--ink);
-  }
-  .item .meta {
-    margin-top: 5px;
-    letter-spacing: 1.4px;
-    color: var(--muted);
-  }
-
-  /* ---------- Uredjivacki blok "Nove kolekcije" ---------- */
-  .editorial {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-  .editorial figure img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    background: var(--sand);
-  }
-  .ed-offset { margin-top: 96px; }
-  .ed-copy h2 {
+  .item h3 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(30px, 3.6vw, 50px);
-    line-height: 1;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    margin-bottom: 26px;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    margin-top: 16px;
+    margin-bottom: 6px;
   }
-  .ed-copy .more { margin-bottom: 30px; padding-bottom: 0; }
-  .ed-copy p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.95;
-    margin-bottom: 18px;
-  }
-
-  /* ---------- Prilike ---------- */
-  .occ-band { background: var(--sand); }
-  .occ-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--sand-deep);
-  }
-  .occ {
-    border-bottom: 1px solid var(--sand-deep);
-    border-right: 1px solid var(--sand-deep);
-    padding: 34px 30px 38px 0;
-  }
-  .occ:first-child { padding-left: 0; }
-  .occ:not(:first-child) { padding-left: 30px; }
-  .occ:last-child { border-right: none; padding-right: 0; }
-  .occ .n {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 34px;
-    line-height: 1;
-    color: var(--wine);
-    margin-bottom: 16px;
-  }
-  .occ h3 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .occ p { color: #6E645E; font-size: 14px; line-height: 1.85; }
+  .item p { color: var(--muted); font-size: 14px; line-height: 1.8; }
 
   /* ---------- Kako ide ---------- */
   .steps {
@@ -364,65 +281,151 @@
     font-family: var(--serif);
     font-weight: 500;
     font-size: 26px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    letter-spacing: 0.03em;
     margin-bottom: 10px;
   }
   .step p { color: var(--muted); font-size: 14px; line-height: 1.9; }
 
-  /* ---------- Kontakt ---------- */
-  .contact-band {
-    background: var(--wine);
-    color: #F1E6E9;
-  }
-  .contact-grid {
+  /* ---------- Nove kolekcije ---------- */
+  .editorial {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 1.15fr 0.85fr 1fr;
+    gap: 40px;
+    align-items: start;
   }
-  .contact-grid h2 {
+  .editorial figure img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: var(--sand);
+  }
+  .ed-offset { margin-top: 96px; }
+  .ed-copy h2 {
     font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(36px, 5.4vw, 76px);
-    line-height: 0.98;
+    font-weight: 500;
+    font-size: clamp(27px, 3.4vw, 44px);
+    line-height: 1.04;
     letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
-  .contact-grid .lead {
-    color: #D6BFC5;
+  .ed-copy .more { margin-bottom: 28px; padding-bottom: 0; }
+  .ed-copy p {
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.95;
-    max-width: 46ch;
+    margin-bottom: 18px;
+    max-width: 62ch;
   }
-  .c-rows { display: grid; gap: 26px; }
-  .c-row { border-top: 1px solid rgba(255,255,255,0.22); padding-top: 16px; }
-  .c-row .lbl { color: #C7A9B0; letter-spacing: 2px; margin-bottom: 6px; }
-  .c-row .val {
+
+  /* ---------- Za svaku priliku ---------- */
+  .occ-band { background: var(--sand); }
+  .occ-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--sand-deep);
+  }
+  .occ {
+    border-bottom: 1px solid var(--sand-deep);
+    border-right: 1px solid var(--sand-deep);
+    padding-top: 34px;
+    padding-bottom: 38px;
+    padding-right: 30px;
+  }
+  .occ:not(:first-child) { padding-left: 30px; }
+  .occ:last-child { border-right: none; padding-right: 0; }
+  .occ .n {
     font-family: var(--serif);
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 1.15;
-    color: #fff;
+    font-weight: 300;
+    font-size: 34px;
+    line-height: 1;
+    color: var(--wine);
+    margin-bottom: 16px;
+  }
+  .occ h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+  }
+  .occ p { color: #6E645E; font-size: 14px; line-height: 1.85; }
+
+  /* ---------- Dođi da probaš ---------- */
+  .promo {
+    background: var(--wine);
+    border-radius: 28px;
+    padding: 56px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 46px;
+    align-items: center;
+    color: #F7EFF1;
+  }
+  .promo h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(30px, 3.6vw, 46px);
+    line-height: 1.14;
     letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 16px;
   }
-  a.val:hover { color: #F0D9DF; }
-  .c-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn-solid, .btn-ghost {
+  .promo > div > p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #DFC6CD;
+    max-width: 48ch;
+  }
+  .promo-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 26px;
+    margin-top: 26px;
+    margin-bottom: 30px;
+  }
+  .promo-points span {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    color: #F1E2E6;
+  }
+  .promo-points svg { flex-shrink: 0; }
+  .promo-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .pill {
     display: inline-block;
-    padding: 14px 34px;
-    letter-spacing: 2.2px;
-    font-size: 10px;
+    border-radius: 999px;
+    padding: 13px 28px;
+    font-size: 13px;
     font-weight: 400;
-    text-transform: uppercase;
-    transition: background 0.25s ease, color 0.25s ease;
+    border: 1px solid transparent;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
-  .btn-solid { background: #fff; color: var(--wine); }
-  .btn-solid:hover { background: #F0D9DF; }
-  .btn-ghost { border: 1px solid rgba(255,255,255,0.6); color: #fff; }
-  .btn-ghost:hover { background: #fff; color: var(--wine); }
+  .pill-light { background: #FDFBF6; color: var(--wine); }
+  .pill-light:hover { background: #EED9DF; }
+  .pill-outline { border-color: rgba(255,255,255,0.55); color: #fff; }
+  .pill-outline:hover { background: #fff; color: var(--wine); }
+
+  .promo-media {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 300px;
+  }
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    background: #D6D2CD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6E6862;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   /* ---------- Footer ---------- */
   footer {
@@ -455,27 +458,25 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 1100px) {
     .wrap { padding-left: 28px; padding-right: 28px; }
-    .grid4 { grid-template-columns: repeat(2, 1fr); gap: 20px 18px; }
+    .grid4 { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
     .editorial { grid-template-columns: 1fr 1fr; gap: 30px; }
     .ed-copy { grid-column: 1 / -1; order: -1; margin-bottom: 6px; }
-    .ed-copy p { max-width: 62ch; }
     .ed-offset { margin-top: 0; }
     .occ-grid { grid-template-columns: repeat(2, 1fr); }
     .occ:nth-child(2n) { border-right: none; padding-right: 0; }
     .occ:nth-child(2n+1) { padding-left: 0; }
-    .occ:nth-child(2n) { padding-left: 30px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+    .promo { grid-template-columns: 1fr; gap: 34px; padding: 44px; }
+    .promo-media { height: 260px; }
   }
 
-  @media (max-width: 860px) {
-    .nav-left { display: none; }
+  @media (max-width: 991px) {
+    .nav { grid-template-columns: 1fr auto; }
+    .nav-start, .nav-right { display: none; }
     .burger { display: block; }
     .topbar .tb-mid { display: none; }
     .topbar .wrap { grid-template-columns: 1fr 1fr; }
-    .hero { height: 76vh; min-height: 480px; }
-    .hero-inner { padding-top: 52px; padding-bottom: 38px; }
-    .section { padding-top: 64px; padding-bottom: 64px; }
-    .sec-head { align-items: flex-end; margin-bottom: 28px; }
+    .hero { height: 78vh; min-height: 500px; }
+    .section { padding-top: 68px; padding-bottom: 68px; }
     .steps { grid-template-columns: 1fr; gap: 34px; }
     .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
@@ -483,16 +484,14 @@
   @media (max-width: 620px) {
     .wrap { padding-left: 20px; padding-right: 20px; }
     .wordmark { font-size: 19px; letter-spacing: 3.5px; }
-    .grid4 { grid-template-columns: 1fr; gap: 34px; }
+    .grid4 { grid-template-columns: 1fr; gap: 36px; }
     .editorial { grid-template-columns: 1fr; }
     .occ-grid { grid-template-columns: 1fr; }
     .occ, .occ:nth-child(2n) { padding-left: 0; padding-right: 0; border-right: none; }
-    .hide-sm { display: none; }
-    .sec-head { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 26px; }
+    .sec-head { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 28px; }
     .sec-head .more { padding-bottom: 0; }
-    .hero-foot { flex-direction: column; align-items: flex-end; gap: 4px; }
-    .hero-foot .season-meta { text-align: right; padding-bottom: 0; }
-    .c-row .val { font-size: 26px; }
+    .promo { padding: 34px 24px; border-radius: 22px; }
+    .promo-media { height: 220px; }
     .foot-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -503,7 +502,7 @@
 <div class="topbar">
   <div class="wrap micro">
     <div class="tb-left">Riva Atelier</div>
-    <div class="tb-mid">Sezona matura i venčanja — zakaži probu na vreme</div>
+    <div class="tb-mid">Termini za maturu se popune prvi, javi se na vreme</div>
     <div class="tb-right"><a href="tel:0632233666">063 22 33 666</a></div>
   </div>
 </div>
@@ -515,19 +514,16 @@
       <div class="nav-start">
         <div class="nav-left micro">
           <a href="#kolekcija">Kolekcija</a>
+          <a href="#kako">Kako ide</a>
           <a href="#nove">Nove kolekcije</a>
           <a href="#prilike">Prilike</a>
-          <a href="#kako">Kako ide</a>
         </div>
-        <button class="burger" id="burger" aria-label="Meni" aria-expanded="false">
-          <span></span><span></span>
-        </button>
       </div>
 
       <a href="#top" class="wordmark">Riva Atelier</a>
 
       <div class="nav-right micro">
-        <a href="#kontakt" class="hide-sm">Kontakt</a>
+        <a href="#kontakt">Kontakt</a>
         <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
         </a>
@@ -535,13 +531,17 @@
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
         </a>
       </div>
+
+      <button class="burger" id="burger" aria-label="Meni" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </nav>
 
     <div class="drawer micro" id="drawer">
       <a href="#kolekcija">Kolekcija</a>
+      <a href="#kako">Kako ide</a>
       <a href="#nove">Nove kolekcije</a>
       <a href="#prilike">Prilike</a>
-      <a href="#kako">Kako ide</a>
       <a href="#kontakt">Kontakt</a>
     </div>
   </div>
@@ -549,34 +549,29 @@
 
 <main>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ 1. HERO ============ -->
   <section class="hero">
-    <img src="assets/haljina-crvena.jpg" alt="Devojka u crvenoj saten mini haljini sa korset gornjim delom i balon suknjom, na vratima salona">
+    <img src="assets/haljina-sljokice.jpg" alt="Devojka u kratkoj haljini sa šljokicama drži flašu penušavog vina na vratima salona">
     <div class="scrim"></div>
     <div class="hero-inner">
       <div class="wrap">
-        <h1>Nova<br>kolekcija</h1>
+        <h1>Haljina za tvoju veliku noć, bez kupovine.</h1>
+        <p class="hero-sub">Kod nas biraš haljinu za maturu, svadbu, punoletstvo ili venčanje, obučeš je jednom i vratiš. Dođi da probaš uživo u salonu na Cara Dušana 2, pa odluči na miru.</p>
         <a href="#kolekcija" class="ghost">Pogledaj kolekciju</a>
-      </div>
-      <div class="wrap">
-        <div class="hero-foot">
-          <div class="season">25/26</div>
-          <div class="season-meta micro">
-            Matura &middot; Venčanja &middot; Proslave<br>
-            Haljine za iznajmljivanje
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ KOLEKCIJA ============ -->
+  <!-- ============ 2. KOLEKCIJA ============ -->
   <section class="section" id="kolekcija">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Kolekcija</h2>
+        <div>
+          <h2>Modeli koje trenutno imamo</h2>
+          <p>Kolekcija se menja kroz sezonu. Ako ti se neki model dopadne, javi se pa proverimo da li je slobodan za tvoj datum.</p>
+        </div>
         <a href="#kontakt" class="more micro">
-          Vidi više
+          Zakaži probu
           <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
         </a>
       </div>
@@ -584,99 +579,41 @@
       <div class="grid4">
         <article class="item">
           <figure><img src="assets/haljina-bela-cvet.png" alt="Bela satenska mini haljina sa velikom ružom od tkanine, na providnoj vešalici ispred ogledala"></figure>
-          <div class="name micro">Bela saten mini sa cvetom</div>
-          <div class="meta micro">Punoletstvo &middot; Građansko</div>
+          <h3>Bela saten sa cvetom</h3>
+          <p>Kratka, zvonasta, sa krupnom ružom od satena. Za punoletstvo ili građansko venčanje.</p>
         </article>
 
         <article class="item">
           <figure><img src="assets/haljina-sampanj-tila.png" alt="Šampanj mini haljina od tila sa šljokicama i korset gornjim delom, na crnoj vešalici"></figure>
-          <div class="name micro">Šampanj til sa korsetom</div>
-          <div class="meta micro">Matura</div>
+          <h3>Šampanj sa šljokicama</h3>
+          <p>Korset gornji deo i til pun sitnih šljokica. Omiljena za maturu.</p>
         </article>
 
         <article class="item">
           <figure><img src="assets/haljina-crna-cvet.png" alt="Crna mini haljina bez bretela sa velikim belim cvetom na jednom ramenu"></figure>
-          <div class="name micro">Crna mini sa belim cvetom</div>
-          <div class="meta micro">Svečana večera</div>
+          <h3>Crna sa belim cvetom</h3>
+          <p>Jedno rame, čist kroj, upečatljiv cvet. Za svečanu večeru ili proslavu.</p>
         </article>
 
         <article class="item">
-          <figure><img src="assets/haljina-sljokice.jpg" alt="Kratka haljina bez bretela u boji šampanjca, gusto prekrivena šljokicama"></figure>
-          <div class="name micro">Šljokice bez bretela</div>
-          <div class="meta micro">Proslave &middot; Svadbe</div>
+          <figure><img src="assets/haljina-crvena.jpg" alt="Crvena satenska mini haljina sa korset gornjim delom i balon suknjom"></figure>
+          <h3>Crvena saten sa balon suknjom</h3>
+          <p>Korset i kratka balon suknja. Za rođendan ili svadbu na kojoj hoćeš da se izdvojiš.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ NOVE KOLEKCIJE ============ -->
-  <section class="section" id="nove" style="padding-top:0;">
-    <div class="wrap">
-      <div class="editorial">
-        <figure>
-          <img src="assets/outfit-crni.jpg" alt="Devojka u crnom svečanom kompletu sa rukavicama, sedi u enterijeru salona">
-        </figure>
-
-        <figure class="ed-offset">
-          <img src="assets/haljina-braon.jpg" alt="Duga braon haljina sa nabranim strukom, ukrštenim bretelama oko vrata i izrezom na grudima">
-        </figure>
-
-        <div class="ed-copy">
-          <h2>Nove<br>kolekcije</h2>
-          <a href="#kontakt" class="more micro">
-            Vidi više
-            <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
-          </a>
-          <p>Kolekcija se dopunjuje kroz sezonu. Biramo modele koji se ne ponavljaju po proslavama — kratke satenske i tila haljine, korsete i duge modele u nekoliko boja.</p>
-          <p>Svaka haljina je jedan komad. Kad je rezervisana za tvoj datum, tog dana ne ide ni kod koga drugog. Zato je najbolje da se javiš čim znaš termin.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRILIKE ============ -->
-  <section class="section occ-band" id="prilike">
+  <!-- ============ 3. KAKO IDE ============ -->
+  <section class="section" id="kako" style="padding-top: 0;">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Za svaku priliku</h2>
-        <a href="#kako" class="more micro">
-          Kako ide
-          <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
-        </a>
-      </div>
-
-      <div class="occ-grid">
-        <div class="occ">
-          <div class="n">01</div>
-          <h3>Matura</h3>
-          <p>Termine za matursko biraj rano — sezona brzo popuni najtraženije modele.</p>
+        <div>
+          <h2>Od poruke do haljine u tri koraka</h2>
+          <p>Nema komplikacija. Javiš se, probaš, poneseš.</p>
         </div>
-        <div class="occ">
-          <div class="n">02</div>
-          <h3>Venčanje</h3>
-          <p>Za mladu ili za gošću. Imamo i duge i kraće modele, u više boja.</p>
-        </div>
-        <div class="occ">
-          <div class="n">03</div>
-          <h3>Punoletstvo</h3>
-          <p>Da 18. rođendan izgleda kako si zamislila, bez kupovine haljine za jednu noć.</p>
-        </div>
-        <div class="occ">
-          <div class="n">04</div>
-          <h3>Proslave</h3>
-          <p>Za kumu, deveruše ili svečanu večeru na koju hoćeš da se središ.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ KAKO IDE ============ -->
-  <section class="section" id="kako">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Kako ide</h2>
         <a href="tel:0632233666" class="more micro">
-          Zakaži probu
+          Pozovi 063 22 33 666
           <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
         </a>
       </div>
@@ -701,32 +638,101 @@
     </div>
   </section>
 
-  <!-- ============ KONTAKT ============ -->
-  <section class="section contact-band" id="kontakt">
+  <!-- ============ 4. NOVE KOLEKCIJE ============ -->
+  <section class="section" id="nove">
     <div class="wrap">
-      <div class="contact-grid">
+      <div class="editorial">
+        <figure>
+          <img src="assets/outfit-crni.jpg" alt="Devojka u crnom svečanom kompletu sa rukavicama, sedi u enterijeru salona">
+        </figure>
+
+        <figure class="ed-offset">
+          <img src="assets/haljina-braon.jpg" alt="Duga braon haljina sa nabranim strukom, ukrštenim bretelama oko vrata i izrezom na grudima">
+        </figure>
+
+        <div class="ed-copy">
+          <h2>Nove kolekcije</h2>
+          <a href="#kontakt" class="more micro">
+            Zakaži probu
+            <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
+          </a>
+          <p>Kolekciju dopunjujemo kroz sezonu. Biramo modele koji se ne ponavljaju po proslavama: kratke satenske haljine, korsete, til i duge modele u više boja.</p>
+          <p>Svaka haljina je jedan komad. Kad je rezervisana za tvoj datum, tog dana ne ide ni kod koga drugog. Zato je najbolje da se javiš čim znaš termin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. ZA SVAKU PRILIKU ============ -->
+  <section class="section occ-band" id="prilike">
+    <div class="wrap">
+      <div class="sec-head">
         <div>
-          <h2>Dođi<br>da probaš</h2>
-          <p class="lead">Najlakše je da nas pozoveš pa da ti nađemo termin. Ako ti se model već dopao iz kolekcije, reci koji — proverimo da li je slobodan za tvoj datum.</p>
-          <div class="c-actions">
-            <a href="tel:0632233666" class="btn-solid">Pozovi 063 22 33 666</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn-ghost">Piši nam na Instagramu</a>
+          <h2>Za svaku priliku</h2>
+          <p>Bez obzira na povod, cilj je isti: da izađeš iz salona sa haljinom u kojoj se osećaš svoje.</p>
+        </div>
+        <a href="#kontakt" class="more micro">
+          Zakaži probu
+          <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
+        </a>
+      </div>
+
+      <div class="occ-grid">
+        <div class="occ">
+          <div class="n">01</div>
+          <h3>Matura</h3>
+          <p>Termine za matursko biraj rano, sezona brzo popuni najtraženije modele.</p>
+        </div>
+        <div class="occ">
+          <div class="n">02</div>
+          <h3>Venčanje</h3>
+          <p>Za mladu ili za gošću. Imamo i duge i kraće, u više boja.</p>
+        </div>
+        <div class="occ">
+          <div class="n">03</div>
+          <h3>Punoletstvo</h3>
+          <p>Da 18. rođendan izgleda kako si zamislila, a da ne kupuješ haljinu za jednu noć.</p>
+        </div>
+        <div class="occ">
+          <div class="n">04</div>
+          <h3>Proslave</h3>
+          <p>Za kumu, deveruše ili bilo koju svečanu večeru na koju hoćeš da se središ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. DOĐI DA PROBAŠ ============ -->
+  <section class="section" id="kontakt" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="promo">
+        <div>
+          <h2>Dođi da probaš</h2>
+          <p>Najlakše je da nas pozoveš pa da ti nađemo termin. Ako ti se model već dopao iz kolekcije, reci koji, proverimo da li je slobodan za tvoj datum.</p>
+
+          <div class="promo-points">
+            <span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EAC9D1" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
+              Cara Dušana 2
+            </span>
+            <span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EAC9D1" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
+              Proba po dogovoru
+            </span>
+            <span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EAC9D1" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
+              Čišćenje je na nama
+            </span>
+          </div>
+
+          <div class="promo-actions">
+            <a href="tel:0632233666" class="pill pill-light">Pozovi 063 22 33 666</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="pill pill-outline">Piši nam na Instagramu</a>
           </div>
         </div>
 
-        <div class="c-rows">
-          <div class="c-row">
-            <div class="lbl micro">Telefon</div>
-            <a href="tel:0632233666" class="val">063 22 33 666</a>
-          </div>
-          <div class="c-row">
-            <div class="lbl micro">Adresa</div>
-            <div class="val">Cara Dušana 2</div>
-          </div>
-          <div class="c-row">
-            <div class="lbl micro">Proba</div>
-            <div class="val">Isključivo po dogovoru</div>
-          </div>
+        <div class="promo-media">
+          <div class="placeholder">Fotografija salona</div>
         </div>
       </div>
     </div>
@@ -745,9 +751,9 @@
       <div>
         <div class="fh micro">Meni</div>
         <a href="#kolekcija">Kolekcija</a>
+        <a href="#kako">Kako ide</a>
         <a href="#nove">Nove kolekcije</a>
         <a href="#prilike">Prilike</a>
-        <a href="#kako">Kako ide</a>
       </div>
       <div>
         <div class="fh micro">Kontakt</div>
