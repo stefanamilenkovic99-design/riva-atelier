@@ -40,12 +40,13 @@
 
   .wrap {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
   }
 
+  /* ---------- Sitna verzalna tipografija (labele, nav, meta) ---------- */
   .micro {
     font-family: var(--sans);
     font-weight: 400;
@@ -54,7 +55,16 @@
     text-transform: uppercase;
   }
 
-  /* ---------- Traka iznad navigacije ---------- */
+  /* ---------- Display serif ---------- */
+  .display {
+    font-family: var(--serif);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Traka sa najavom ---------- */
   .topbar {
     background: var(--wine-deep);
     color: #E8DCDF;
@@ -147,44 +157,45 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 58% 26%;
+    object-position: 52% 24%;
   }
   .hero .scrim {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(100deg, rgba(20,10,12,0.78) 0%, rgba(20,10,12,0.55) 40%, rgba(20,10,12,0.18) 72%),
-      linear-gradient(0deg, rgba(20,10,12,0.36) 0%, rgba(20,10,12,0) 38%);
+      linear-gradient(100deg, rgba(20,10,12,0.62) 0%, rgba(20,10,12,0.30) 42%, rgba(20,10,12,0.10) 68%),
+      linear-gradient(0deg, rgba(20,10,12,0.48) 0%, rgba(20,10,12,0) 40%);
   }
   .hero-inner {
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 74px;
+    padding-bottom: 54px;
   }
   .hero-inner > .wrap { width: 100%; }
 
   .hero h1 {
     font-family: var(--serif);
     font-weight: 300;
-    font-size: clamp(40px, 5.6vw, 82px);
-    line-height: 1.06;
+    font-size: clamp(42px, 5.8vw, 84px);
+    line-height: 1.04;
     letter-spacing: 0.01em;
     color: #fff;
     max-width: 13ch;
-    text-shadow: 0 2px 18px rgba(20,10,12,0.45);
   }
   .hero-sub {
-    margin-top: 22px;
+    margin-top: 20px;
     color: rgba(255,255,255,0.94);
     font-size: 16px;
     line-height: 1.8;
-    max-width: 40ch;
-    text-shadow: 0 2px 14px rgba(20,10,12,0.55);
+    max-width: 42ch;
   }
   .hero .ghost {
     display: inline-block;
-    margin-top: 32px;
+    margin-top: 34px;
     border: 1px solid rgba(255,255,255,0.75);
     color: #fff;
     padding: 13px 42px;
@@ -197,29 +208,23 @@
   .hero .ghost:hover { background: #fff; color: var(--ink); }
 
   /* ---------- Zaglavlje sekcije ---------- */
-  .section { padding-top: 96px; padding-bottom: 96px; }
+  .section { padding-top: 92px; padding-bottom: 92px; }
 
   .sec-head {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 16px 40px;
-    margin-bottom: 44px;
+    gap: 16px 30px;
+    margin-bottom: 40px;
   }
   .sec-head h2 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(27px, 4.2vw, 48px);
-    line-height: 1.04;
-    letter-spacing: 0.02em;
-  }
-  .sec-head p {
-    margin-top: 14px;
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.9;
-    max-width: 62ch;
+    font-size: clamp(27px, 4.2vw, 52px);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
   .more {
     display: inline-flex;
@@ -251,15 +256,82 @@
     transition: transform 0.7s cubic-bezier(0.2,0.7,0.3,1);
   }
   .item:hover figure img { transform: scale(1.04); }
-  .item h3 {
+  .item .name {
+    margin-top: 14px;
+    letter-spacing: 1.4px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .item .meta {
+    margin-top: 7px;
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  /* ---------- Uredjivacki blok "Nove kolekcije" ---------- */
+  .editorial {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .editorial figure img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: var(--sand);
+  }
+  .ed-offset { margin-top: 96px; }
+  .ed-copy h2 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 22px;
-    letter-spacing: 0.02em;
-    margin-top: 16px;
-    margin-bottom: 6px;
+    font-size: clamp(30px, 3.6vw, 50px);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
   }
-  .item p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+  .ed-copy .more { margin-bottom: 30px; padding-bottom: 0; }
+  .ed-copy p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.95;
+    margin-bottom: 18px;
+  }
+
+  /* ---------- Prilike ---------- */
+  .occ-band { background: var(--sand); }
+  .occ-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--sand-deep);
+  }
+  .occ {
+    border-bottom: 1px solid var(--sand-deep);
+    border-right: 1px solid var(--sand-deep);
+    padding: 34px 30px 38px 0;
+  }
+  .occ:first-child { padding-left: 0; }
+  .occ:not(:first-child) { padding-left: 30px; }
+  .occ:last-child { border-right: none; padding-right: 0; }
+  .occ .n {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 34px;
+    line-height: 1;
+    color: var(--wine);
+    margin-bottom: 16px;
+  }
+  .occ h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .occ p { color: #6E645E; font-size: 14px; line-height: 1.85; }
 
   /* ---------- Kako ide ---------- */
   .steps {
@@ -281,74 +353,11 @@
     font-family: var(--serif);
     font-weight: 500;
     font-size: 26px;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     margin-bottom: 10px;
   }
   .step p { color: var(--muted); font-size: 14px; line-height: 1.9; }
-
-  /* ---------- Nove kolekcije ---------- */
-  .editorial {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-  .editorial figure img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    background: var(--sand);
-  }
-  .ed-offset { margin-top: 96px; }
-  .ed-copy h2 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(27px, 3.4vw, 44px);
-    line-height: 1.04;
-    letter-spacing: 0.02em;
-    margin-bottom: 24px;
-  }
-  .ed-copy .more { margin-bottom: 28px; padding-bottom: 0; }
-  .ed-copy p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.95;
-    margin-bottom: 18px;
-    max-width: 62ch;
-  }
-
-  /* ---------- Za svaku priliku ---------- */
-  .occ-band { background: var(--sand); }
-  .occ-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--sand-deep);
-  }
-  .occ {
-    border-bottom: 1px solid var(--sand-deep);
-    border-right: 1px solid var(--sand-deep);
-    padding-top: 34px;
-    padding-bottom: 38px;
-    padding-right: 30px;
-  }
-  .occ:not(:first-child) { padding-left: 30px; }
-  .occ:last-child { border-right: none; padding-right: 0; }
-  .occ .n {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 34px;
-    line-height: 1;
-    color: var(--wine);
-    margin-bottom: 16px;
-  }
-  .occ h3 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 25px;
-    letter-spacing: 0.03em;
-    margin-bottom: 10px;
-  }
-  .occ p { color: #6E645E; font-size: 14px; line-height: 1.85; }
 
   /* ---------- Dođi da probaš ---------- */
   .promo {
@@ -359,7 +368,7 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
     gap: 46px;
     align-items: center;
-    color: #F7EFF1;
+    color: #F1E6E9;
   }
   .promo h2 {
     font-family: var(--serif);
@@ -370,10 +379,10 @@
     color: #fff;
     margin-bottom: 16px;
   }
-  .promo > div > p {
+  .promo .lead {
+    color: #DFC6CD;
     font-size: 15px;
     line-height: 1.8;
-    color: #DFC6CD;
     max-width: 48ch;
   }
   .promo-points {
@@ -391,7 +400,7 @@
     color: #F1E2E6;
   }
   .promo-points svg { flex-shrink: 0; }
-  .promo-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .c-actions { display: flex; flex-wrap: wrap; gap: 12px; }
   .pill {
     display: inline-block;
     border-radius: 999px;
@@ -458,25 +467,28 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 1100px) {
     .wrap { padding-left: 28px; padding-right: 28px; }
-    .grid4 { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
+    .grid4 { grid-template-columns: repeat(2, 1fr); gap: 20px 18px; }
     .editorial { grid-template-columns: 1fr 1fr; gap: 30px; }
     .ed-copy { grid-column: 1 / -1; order: -1; margin-bottom: 6px; }
+    .ed-copy p { max-width: 62ch; }
     .ed-offset { margin-top: 0; }
     .occ-grid { grid-template-columns: repeat(2, 1fr); }
     .occ:nth-child(2n) { border-right: none; padding-right: 0; }
     .occ:nth-child(2n+1) { padding-left: 0; }
+    .occ:nth-child(2n) { padding-left: 30px; }
     .promo { grid-template-columns: 1fr; gap: 34px; padding: 44px; }
     .promo-media { height: 260px; }
   }
 
-  @media (max-width: 991px) {
-    .nav { grid-template-columns: 1fr auto; }
-    .nav-start, .nav-right { display: none; }
+  @media (max-width: 860px) {
+    .nav-left { display: none; }
     .burger { display: block; }
     .topbar .tb-mid { display: none; }
     .topbar .wrap { grid-template-columns: 1fr 1fr; }
-    .hero { height: 78vh; min-height: 500px; }
-    .section { padding-top: 68px; padding-bottom: 68px; }
+    .hero { height: 76vh; min-height: 480px; }
+    .hero-inner { padding-top: 52px; padding-bottom: 38px; }
+    .section { padding-top: 64px; padding-bottom: 64px; }
+    .sec-head { align-items: flex-end; margin-bottom: 28px; }
     .steps { grid-template-columns: 1fr; gap: 34px; }
     .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
@@ -484,11 +496,12 @@
   @media (max-width: 620px) {
     .wrap { padding-left: 20px; padding-right: 20px; }
     .wordmark { font-size: 19px; letter-spacing: 3.5px; }
-    .grid4 { grid-template-columns: 1fr; gap: 36px; }
+    .grid4 { grid-template-columns: 1fr; gap: 34px; }
     .editorial { grid-template-columns: 1fr; }
     .occ-grid { grid-template-columns: 1fr; }
     .occ, .occ:nth-child(2n) { padding-left: 0; padding-right: 0; border-right: none; }
-    .sec-head { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 28px; }
+    .hide-sm { display: none; }
+    .sec-head { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 26px; }
     .sec-head .more { padding-bottom: 0; }
     .promo { padding: 34px 24px; border-radius: 22px; }
     .promo-media { height: 220px; }
@@ -518,12 +531,15 @@
           <a href="#nove">Nove kolekcije</a>
           <a href="#prilike">Prilike</a>
         </div>
+        <button class="burger" id="burger" aria-label="Meni" aria-expanded="false">
+          <span></span><span></span>
+        </button>
       </div>
 
       <a href="#top" class="wordmark">Riva Atelier</a>
 
       <div class="nav-right micro">
-        <a href="#kontakt">Kontakt</a>
+        <a href="#kontakt" class="hide-sm">Kontakt</a>
         <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
         </a>
@@ -531,10 +547,6 @@
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
         </a>
       </div>
-
-      <button class="burger" id="burger" aria-label="Meni" aria-expanded="false">
-        <span></span><span></span>
-      </button>
     </nav>
 
     <div class="drawer micro" id="drawer">
@@ -549,7 +561,7 @@
 
 <main>
 
-  <!-- ============ 1. HERO ============ -->
+  <!-- ============ HERO ============ -->
   <section class="hero">
     <img src="assets/haljina-sljokice.jpg" alt="Devojka u kratkoj haljini sa šljokicama drži flašu penušavog vina na vratima salona">
     <div class="scrim"></div>
@@ -562,14 +574,11 @@
     </div>
   </section>
 
-  <!-- ============ 2. KOLEKCIJA ============ -->
+  <!-- ============ KOLEKCIJA ============ -->
   <section class="section" id="kolekcija">
     <div class="wrap">
       <div class="sec-head">
-        <div>
-          <h2>Modeli koje trenutno imamo</h2>
-          <p>Kolekcija se menja kroz sezonu. Ako ti se neki model dopadne, javi se pa proverimo da li je slobodan za tvoj datum.</p>
-        </div>
+        <h2>Modeli koje trenutno imamo</h2>
         <a href="#kontakt" class="more micro">
           Zakaži probu
           <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
@@ -579,39 +588,36 @@
       <div class="grid4">
         <article class="item">
           <figure><img src="assets/haljina-bela-cvet.png" alt="Bela satenska mini haljina sa velikom ružom od tkanine, na providnoj vešalici ispred ogledala"></figure>
-          <h3>Bela saten sa cvetom</h3>
-          <p>Kratka, zvonasta, sa krupnom ružom od satena. Za punoletstvo ili građansko venčanje.</p>
+          <div class="name micro">Bela saten sa cvetom</div>
+          <div class="meta">Kratka, zvonasta, sa krupnom ružom od satena. Za punoletstvo ili građansko venčanje.</div>
         </article>
 
         <article class="item">
           <figure><img src="assets/haljina-sampanj-tila.png" alt="Šampanj mini haljina od tila sa šljokicama i korset gornjim delom, na crnoj vešalici"></figure>
-          <h3>Šampanj sa šljokicama</h3>
-          <p>Korset gornji deo i til pun sitnih šljokica. Omiljena za maturu.</p>
+          <div class="name micro">Šampanj sa šljokicama</div>
+          <div class="meta">Korset gornji deo i til pun sitnih šljokica. Omiljena za maturu.</div>
         </article>
 
         <article class="item">
           <figure><img src="assets/haljina-crna-cvet.png" alt="Crna mini haljina bez bretela sa velikim belim cvetom na jednom ramenu"></figure>
-          <h3>Crna sa belim cvetom</h3>
-          <p>Jedno rame, čist kroj, upečatljiv cvet. Za svečanu večeru ili proslavu.</p>
+          <div class="name micro">Crna sa belim cvetom</div>
+          <div class="meta">Jedno rame, čist kroj, upečatljiv cvet. Za svečanu večeru ili proslavu.</div>
         </article>
 
         <article class="item">
           <figure><img src="assets/haljina-crvena.jpg" alt="Crvena satenska mini haljina sa korset gornjim delom i balon suknjom"></figure>
-          <h3>Crvena saten sa balon suknjom</h3>
-          <p>Korset i kratka balon suknja. Za rođendan ili svadbu na kojoj hoćeš da se izdvojiš.</p>
+          <div class="name micro">Crvena saten sa balon suknjom</div>
+          <div class="meta">Korset i kratka balon suknja. Za rođendan ili svadbu na kojoj hoćeš da se izdvojiš.</div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ 3. KAKO IDE ============ -->
-  <section class="section" id="kako" style="padding-top: 0;">
+  <!-- ============ KAKO IDE ============ -->
+  <section class="section" id="kako" style="padding-top:0;">
     <div class="wrap">
       <div class="sec-head">
-        <div>
-          <h2>Od poruke do haljine u tri koraka</h2>
-          <p>Nema komplikacija. Javiš se, probaš, poneseš.</p>
-        </div>
+        <h2>Kako ide</h2>
         <a href="tel:0632233666" class="more micro">
           Pozovi 063 22 33 666
           <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
@@ -638,7 +644,7 @@
     </div>
   </section>
 
-  <!-- ============ 4. NOVE KOLEKCIJE ============ -->
+  <!-- ============ NOVE KOLEKCIJE ============ -->
   <section class="section" id="nove">
     <div class="wrap">
       <div class="editorial">
@@ -651,26 +657,23 @@
         </figure>
 
         <div class="ed-copy">
-          <h2>Nove kolekcije</h2>
+          <h2>Nove<br>kolekcije</h2>
           <a href="#kontakt" class="more micro">
             Zakaži probu
             <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
           </a>
-          <p>Kolekciju dopunjujemo kroz sezonu. Biramo modele koji se ne ponavljaju po proslavama: kratke satenske haljine, korsete, til i duge modele u više boja.</p>
+          <p>Kolekciju dopunjujemo kroz sezonu. Biramo modele koji se ne ponavljaju po proslavama: kratke satenske i tila haljine, korsete i duge modele u nekoliko boja.</p>
           <p>Svaka haljina je jedan komad. Kad je rezervisana za tvoj datum, tog dana ne ide ni kod koga drugog. Zato je najbolje da se javiš čim znaš termin.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 5. ZA SVAKU PRILIKU ============ -->
+  <!-- ============ PRILIKE ============ -->
   <section class="section occ-band" id="prilike">
     <div class="wrap">
       <div class="sec-head">
-        <div>
-          <h2>Za svaku priliku</h2>
-          <p>Bez obzira na povod, cilj je isti: da izađeš iz salona sa haljinom u kojoj se osećaš svoje.</p>
-        </div>
+        <h2>Za svaku priliku</h2>
         <a href="#kontakt" class="more micro">
           Zakaži probu
           <svg width="52" height="8" viewBox="0 0 52 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h50M46 1l4 3-4 3"/></svg>
@@ -686,29 +689,29 @@
         <div class="occ">
           <div class="n">02</div>
           <h3>Venčanje</h3>
-          <p>Za mladu ili za gošću. Imamo i duge i kraće, u više boja.</p>
+          <p>Za mladu ili za gošću. Imamo i duge i kraće modele, u više boja.</p>
         </div>
         <div class="occ">
           <div class="n">03</div>
           <h3>Punoletstvo</h3>
-          <p>Da 18. rođendan izgleda kako si zamislila, a da ne kupuješ haljinu za jednu noć.</p>
+          <p>Da 18. rođendan izgleda kako si zamislila, bez kupovine haljine za jednu noć.</p>
         </div>
         <div class="occ">
           <div class="n">04</div>
           <h3>Proslave</h3>
-          <p>Za kumu, deveruše ili bilo koju svečanu večeru na koju hoćeš da se središ.</p>
+          <p>Za kumu, deveruše ili svečanu večeru na koju hoćeš da se središ.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 6. DOĐI DA PROBAŠ ============ -->
-  <section class="section" id="kontakt" style="padding-top: 0;">
+  <!-- ============ DOĐI DA PROBAŠ ============ -->
+  <section class="section" id="kontakt">
     <div class="wrap">
       <div class="promo">
         <div>
           <h2>Dođi da probaš</h2>
-          <p>Najlakše je da nas pozoveš pa da ti nađemo termin. Ako ti se model već dopao iz kolekcije, reci koji, proverimo da li je slobodan za tvoj datum.</p>
+          <p class="lead">Najlakše je da nas pozoveš pa da ti nađemo termin. Ako ti se model već dopao iz kolekcije, reci koji, proverimo da li je slobodan za tvoj datum.</p>
 
           <div class="promo-points">
             <span>
@@ -725,7 +728,7 @@
             </span>
           </div>
 
-          <div class="promo-actions">
+          <div class="c-actions">
             <a href="tel:0632233666" class="pill pill-light">Pozovi 063 22 33 666</a>
             <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="pill pill-outline">Piši nam na Instagramu</a>
           </div>
